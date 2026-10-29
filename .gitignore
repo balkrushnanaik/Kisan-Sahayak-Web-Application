@@ -1,0 +1,15 @@
+node_modules/
+client/node_modules/
+server/node_modules/
+client/dist/
+server/dist/
+.env
+.env.*
+!.env.example
+coverage/
+.DS_Store
+*.log
+server/uploads/*
+!server/uploads/.gitkeep
+playwright-report/
+test-results/

@@ -1,0 +1,30 @@
+{
+  "name": "kisan-sahayak",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mobile-first agricultural labour and machinery marketplace",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c green,blue \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "npm --workspace client run dev",
+    "dev:server": "npm --workspace server run dev",
+    "build": "npm --workspace client run build && npm --workspace server run build",
+    "typecheck": "npm --workspace client run typecheck && npm --workspace server run typecheck",
+    "test": "npm --workspace server test && npm --workspace client test",
+    "seed": "npm --workspace server run seed",
+    "seed:admin": "npm --workspace server run seed:admin",
+    "e2e": "playwright test",
+    "e2e:install": "playwright install chromium",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "@playwright/test": "^1.64.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
